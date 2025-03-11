@@ -1,0 +1,54 @@
+{% extends "partials/base.html" %}
+
+{% block body %}
+<style>
+    .pricing-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    
+    .pricing-title {
+        color: #4f46e5;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+    
+    .pricing-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .pricing-list li {
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.5rem;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .service-name {
+        font-weight: 600;
+        color: #1e293b;
+    }
+    
+    .service-price {
+        color: #4f46e5;
+        font-weight: 500;
+    }
+</style>
+
+<div class="pricing-container">
+    <h3 class="pricing-title">Our Pricing</h3>
+    
+    <ul class="pricing-list">
+        {% for key, value in pricing.items %}
+            <li>
+                <span class="service-name">{{ key }}</span>
+                <span class="service-price">{{ value }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock body %}

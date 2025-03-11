@@ -1,0 +1,42 @@
+{% extends "partials/base.html" %}
+
+{% block body %}
+<style>
+    .services-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    
+    .services-title {
+        color: #4f46e5;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+    
+    .services-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .services-list li {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #e2e8f0;
+        color: #1e293b;
+    }
+    
+    .services-list li:last-child {
+        border-bottom: none;
+    }
+</style>
+
+<div class="services-container">
+    <h3 class="services-title">These are the services we offer</h3>
+    
+    <ul class="services-list">
+        {% for service in services %}
+            <li>{{ service }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock body %}

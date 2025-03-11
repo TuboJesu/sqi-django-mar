@@ -1,0 +1,54 @@
+{% extends "partials/base.html" %}
+
+{% block body %}
+<style>
+    .testimonials-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    
+    .testimonials-title {
+        color: #4f46e5;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+    
+    .testimonials-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .testimonials-list li {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-left: 3px solid #4f46e5;
+        background-color: #f8fafc;
+    }
+    
+    .customer-name {
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+    
+    .testimonial-text {
+        color: #475569;
+        font-style: italic;
+    }
+</style>
+
+<div class="testimonials-container">
+    <h3 class="testimonials-title">Customer Testimonials</h3>
+    
+    <ul class="testimonials-list">
+        {% for key, value in testimonials.items %}
+            <li>
+                <span class="customer-name">{{ key }}</span>
+                <span class="testimonial-text">"{{ value }}"</span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock body %}
