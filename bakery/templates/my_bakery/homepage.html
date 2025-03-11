@@ -1,0 +1,15 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <script src="{% static 'js/homepage.js' %}"></script>
+
+    <title>Homepage</title>
+    <div class="container">
+        <h1>Welcome to Our Bakery</h1>
+        <p>We're delighted to have you here. We have prepared a delicious selection of Breads and Pastries for you to tryout and enjoy.</p>
+        
+        <a href="{% url 'my_bakery:menupage' %}" class="menu-button">Explore Our Menu</a>
+    </div>
+{% endblock content %}

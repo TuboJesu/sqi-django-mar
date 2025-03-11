@@ -1,0 +1,53 @@
+/* Elegant Bakery Menu Styling */
+
+.bakery-menu-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+  }
+  
+  .menu-title {
+    text-align: center;
+    color: #8B4513;
+    font-family: 'Georgia', serif;
+    font-size: 28px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E8DED1;
+  }
+  
+  .menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px dotted #E8DED1;
+  }
+  
+  .menu-item:last-child {
+    border-bottom: none;
+  }
+  
+  .item-name {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    color: #5D4037;
+    margin: 0;
+  }
+  
+  .item-price {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #8D6E63;
+    font-weight: bold;
+    margin: 0;
+  }

@@ -1,0 +1,21 @@
+
+{% load static %}
+
+
+<header>
+{% include "partials/header.html" %}
+</header>
+
+<main>
+    {% block content %}
+    
+    {% endblock content %}
+
+</main>
+
+<footer>
+{% include "partials/footer.html" %}
+</footer>
+   
+    
+<link rel="stylesheet" href="{% static 'css/base.css' %}">

@@ -1,0 +1,25 @@
+
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aboutpage.css' %}">
+
+    <title>About page</title>
+
+<div class="about-container">
+    <h3 class="about-heading">
+        Welcome to {{bakery_name}}, where every bite is made with love! We specialize in freshly baked breads, pastries, and cakes, using only the finest ingredients. Whether you're craving a warm croissant, a rich chocolate cake, or a comforting cup of coffee, we've got something delicious for you.
+    </h3>
+    <h4 class="about-tagline">
+        Visit us today and taste the difference! 😊
+    </h4>
+
+    <a href="{% url 'my_bakery:homepage' %}" class="home-button">Checkout our Home Page here!</a>
+</div>
+
+{% endblock content %}
+
+
+
