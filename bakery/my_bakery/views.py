@@ -14,8 +14,8 @@ def aboutpage(request):
 def contactpage(request):
 
     current_time = timezone.localtime().time()
-    opening_time = timezone.datetime.strptime("07:00", "%H:%M").time()
-    closing_time = timezone.datetime.strptime("19:00", "%H:%M").time()
+    opening_time = timezone.datetime.strptime("02:00", "%H:%M").time()
+    closing_time = timezone.datetime.strptime("14:00", "%H:%M").time()
 
     is_open = opening_time <= current_time <= closing_time
 
