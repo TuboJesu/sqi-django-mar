@@ -9,3 +9,6 @@ class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     num_of_pages = models.PositiveIntegerField()
     published_on = models.DateField()
+
+    def __str__(self):
+        return f"{self.title} published by {self.author}"
