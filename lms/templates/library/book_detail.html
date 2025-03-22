@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{ book.title }}</title>
+</head>
+<body>
+    <h4>
+    These are the book details
+    </h4>
+    <p>
+    {{ book.title }}
+    </p>
+
+    <p>
+        {% if book.cover_image %}
+        <img width="100" height= "100" src="{{ book.cover_image.url }}" alt="{{ book.title }} Image">
+        
+        {% else %}
+
+            <p>You dont have a cover image</p>
+        {% endif %}
+    </p>
+    <p>
+        {{ book.author }}
+    </p>
+    <p>
+        {{ book.num_of_pages }}
+    </p>
+    <p>
+        {{ book.published_on }}
+    </p>
+</body>
+</html>
+
+

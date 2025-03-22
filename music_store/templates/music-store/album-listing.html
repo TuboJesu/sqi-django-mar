@@ -1,0 +1,24 @@
+{% extends "partials/base.html" %}
+
+{% load static %}
+
+{% block title %}All Albums{% endblock title %}
+
+{% block contents %}
+<div class="artist-container">
+    <h1>All Albums</h1>
+    <h4>Explore our collection of albums and their artists.</h4>
+    
+    <ol class="artist-list">
+        {% for album in all_albums %}
+            <li>
+                <strong><a href="{% url 'music_store:album-detail' album.pk %}">{{ album.title }}</a></strong> 
+            </li>
+        {% endfor %}
+    </ol>
+</div>
+{% endblock contents %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}

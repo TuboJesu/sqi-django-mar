@@ -1,0 +1,52 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %} All Recipes {% endblock title %}
+
+{% block content %}
+<div class="recipes-container">
+    <h2 class="page-title">All Recipes</h2>
+    
+    <ul class="recipes-grid">
+        {% for recipe in recipes %}
+            <li class="recipe-card">
+                <div class="recipe-image-container">
+                    {% if recipe.image %}
+                        <img class="recipe-image" src="{{ recipe.image.url }}" alt="{{ recipe.name }} Image">
+                    {% else %}
+                        <div class="no-image-placeholder">
+                            <span>No image available</span>
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <div class="recipe-content">
+                    <h3 class="recipe-name">{{ recipe.name }}</h3>
+                    
+                    <div class="recipe-details">
+                        <div class="recipe-ingredients">
+                            <strong>Ingredients:</strong> {{ recipe.ingredients }}
+                        </div>
+                        
+                        <div class="recipe-instructions">
+                            <strong>Instructions:</strong> {{ recipe.instructions }}
+                        </div>
+                        
+                        <div class="recipe-time">
+                            <span>{{ recipe.cooking_time }} minutes</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="add-recipe-cta">
+        <a href="{% url 'recipe_app:add_recipe_with_form' %}" class="add-recipe-link">Add Your Own Recipe</a>
+    </div>
+</div>
+{% endblock content %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}

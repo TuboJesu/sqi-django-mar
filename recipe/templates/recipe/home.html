@@ -1,0 +1,24 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %} Home Page {% endblock title %}
+
+{% block content %}
+<div class="home-page-background">
+  <main>
+    <div class="home-container">
+      <h1 class="page-title">Recipe Collection</h1>
+
+      <p class="welcome-message">Welcome to our Recipe Homepage where you can see different Recipes for your favourite dishes</p>
+      
+      <div class="cta-container">
+        Click <a href="{% url 'recipe_app:recipes' %}" class="cta-link">here</a> to see all Recipes 
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock content %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}

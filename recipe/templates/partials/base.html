@@ -1,0 +1,19 @@
+{% load static %}
+
+<title>{% block title %} Recipe {% endblock title %}</title>
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+
+{% block content %}
+
+{% endblock content %}
+
+{% block footer %}
+{% include "partials/footer.html" %}
+{% endblock footer %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}

@@ -1,0 +1,13 @@
+{% load static  %}
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'music_store:home' %}">Home</a></li>
+            <li><a href="{% url 'music_store:artists' %}">All Artists</a></li>
+            <li><a href="{% url 'music_store:all-albums' %}">All Albums</a></li>
+        </ul>
+    </nav>
+</header>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">

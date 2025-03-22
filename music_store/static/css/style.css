@@ -1,0 +1,550 @@
+/* General Styles */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+}
+
+/* Header Styles */
+header {
+    background-color: #2c3e50; /* Deep blue */
+    padding: 20px 0; /* Increased padding for a bigger look */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 25px;
+}
+
+nav ul li a {
+    color: #ecf0f1; /* Light gray text */
+    text-decoration: none;
+    font-size: 18px; /* Slightly larger font */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #f1c40f; /* Gold hover effect */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2c3e50; 
+    color: #ecf0f1;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+
+/* Homepage Styles */
+/* ------------------------------------------------- */
+
+.homepage-container {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #74b9ff, #a29bfe); /* Cool blue gradient */
+    color: #fff;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.homepage-container h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.homepage-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.homepage-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    background-color: #2d3436;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #f1c40f; /* Gold hover effect */
+    color: #2d3436;
+}
+
+
+/* All Artists Page  */
+/* ------------------------------------- */
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Purple-to-blue gradient */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Artists Container */
+.artist-container {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 700px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1); /* Subtle transparency */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.artist-container h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Artist List */
+.artist-list {
+    list-style: none;
+    padding: 0;
+}
+
+.artist-list li {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.artist-list a {
+    text-decoration: none;
+    color: #3371db; /* Gold color */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.artist-list a:hover {
+    color: #ffdd57; /* Brighter gold */
+}
+
+/* Debut Year Styling */
+.debut-year {
+    font-size: 16px;
+    color: #dcdde1;
+    font-style: italic;
+}
+
+/* All Album Page */
+/* ------------------------------------ */
+/* General Page Styling */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(to right, #74b9ff, #a29bfe); /* Reverted to previous blue-to-lavender gradient */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Albums Container */
+.album-container {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 700px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1); /* Subtle transparency */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.album-container h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Album List */
+.album-list {
+    list-style: none;
+    padding: 0;
+}
+
+.album-list li {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+/* Artist Name Styling */
+.artist-name {
+    color: #3371db; /* Gold color */
+    font-weight: bold;
+}
+
+/* Release Year Styling */
+.release-year {
+    font-size: 16px;
+    color: #dcdde1;
+    font-style: italic;
+}
+
+
+/* Artist-album Page */
+/* ------------------------------------- */
+
+/* General Page Styling */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* Bold gradient */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Artist Albums Container */
+.artist-albums-container {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(0, 0, 0, 0.3); /* Slightly darker for contrast */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Heading */
+.artist-albums-container h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+/* Album List */
+.album-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Album Item Layout */
+.album-item {
+    display: flex;
+    justify-content: space-between; /* Pushes text to the left and image to the right */
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+/* Album Info */
+.album-info {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.album-info strong {
+    font-size: 20px;
+    color: #f1c40f; /* Gold for title */
+}
+
+.release-date, .artist-name {
+    font-size: 14px;
+    color: #dcdde1;
+    font-style: italic;
+}
+
+/* Album Image (Placed on the Right) */
+.album-item img {
+    width: 80px; /* Small and neat */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effects */
+.album-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.album-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* No Image Placeholder */
+.album-info p {
+    color: #e74c3c;
+    font-style: italic;
+    font-size: 14px;
+}
+
+
+/* all artist and artist detail */
+----------------------------
+
+/* General Page Styling */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* Cool gradient */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Artist Container */
+.artist-container {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for contrast */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Heading */
+.artist-container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Artist Details */
+.artist-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Artist Info */
+.artist-container div p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Artist Image */
+.artist-container img {
+    width: 120px; /* Reduced size */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on Image */
+.artist-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* View Albums Link */
+.artist-container a {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.artist-container a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #ffeb3b;
+}
+
+/* No Image Placeholder */
+.artist-container p {
+    color: #e74c3c;
+    font-style: italic;
+    font-size: 14px;
+}
+
+
+/* General Page Styling */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* Vibrant gradient */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Album Container */
+.artist-albums-container {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgba(0, 0, 0, 0.3); /* Slight contrast */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Heading */
+.artist-albums-container h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Album Details */
+.album-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Album Title */
+.album-info strong {
+    font-size: 20px;
+    color: #f1c40f; /* Gold color for titles */
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Release Date & Artist Name */
+.release-date, .artist-name {
+    font-size: 14px;
+    color: #dcdde1;
+    font-style: italic;
+}
+
+/* Album Image */
+.album-info img {
+    width: 120px; /* Consistent size */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on Image */
+.album-info img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* No Image Placeholder */
+.album-info p {
+    color: #e74c3c;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* Artist Card Styling */
+.artist-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Artist Name */
+.artist-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f8f8f8;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Debut Year */
+.debut-year {
+    font-size: 18px;
+    font-style: italic;
+    color: #f1c40f;
+    display: block;
+    margin-top: 5px;
+    text-shadow: 1px 1px 5px rgba(241, 196, 15, 0.5);
+}
+
+/* Artist Image */
+.artist-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* No Image Placeholder */
+.no-image-text {
+    color: #e74c3c;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Album Button */
+.album-btn {
+    display: inline-block;
+    background: linear-gradient(to right, #f1c40f, #e74c3c);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.album-btn:hover {
+    background: linear-gradient(to right, #e74c3c, #f1c40f);
+    transform: scale(1.05);
+}

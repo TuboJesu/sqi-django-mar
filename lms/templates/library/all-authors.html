@@ -7,5 +7,36 @@
 </head>
 <body>
     <p>These are all the authors...</p>
+
+    <h3>These are all the books in Descending order</h3>
+        <ul>
+            {% for book in all_books %}
+                <li><a href="{% url 'library:book_detail' book.pk %}">{{ book }}</a></li>
+
+            {% endfor %}    
+        </ul>
+
+
+    <h3>These are all the books after 2000</h3>
+        <ul>
+            {% for book in all_books_after_2000 %}
+                <li>{{ book }} -- {{ book.published_on }}</li>
+            {% endfor %}    
+        </ul>
+
+
+    <h5>
+        {{ first_author }}
+    </h5>
+        
+   
+    <h3>These are all the books greater than 200 and before 1990</h3>
+        <ul>
+            {% for book in books_greater_than_200_and_before_1990 %}
+                <li>{{ book }} -- {{ book.published_on }} -- {{ book.num_of_pages }} pages</li>
+
+            {% endfor %}    
+        </ul>
+
 </body>
 </html>

@@ -1,0 +1,32 @@
+{% extends "partials/base.html" %}
+
+{% load static %}
+
+{% block title %}Album Detail View{% endblock title %}
+
+{% block contents %}
+<div class="artist-albums-container">
+    <h3>This album was produced by {{ album.artist.name }}</h3>
+    
+    <div class="album-info">
+        <strong>{{ album.title }}</strong>
+        <span class="release-date">Released on: {{ album.release_date }}</span>
+        <span class="artist-name">by <a href="{% url 'music_store:artist-detail' album.artist.pk %}">
+    {{ album.artist.name }}
+</a></span>
+
+            {% if album.album_image %}
+        <img src="{{ album.album_image.url }}" alt="{{ album.title }} Image">
+    
+    {% else %}
+        <p> No picture yet</p>
+    {% endif %}
+    </div>
+</div>
+{% endblock contents %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}
+
+ 

@@ -1,0 +1,30 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %} All Books {% endblock title %}
+
+{% block content %}
+    <div class="page-header">
+        <h4>Welcome to our Book list page</h4>
+    </div>
+    <div class="book-list-container">
+        {% if books %}
+            <ul class="book-list">
+                {% for book in books %}
+                    <li><a href="{% url 'book_review:book_detail' book.pk %}">{{book.title}}</a></li>
+                {% endfor %}
+            </ul>
+            <div class="book-count">
+                Total books: {{ books|length }}
+            </div>
+        {% else %}
+            <div class="empty-list">
+                No books are available at the moment.
+            </div>
+        {% endif %}
+    </div>
+{% endblock content %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}

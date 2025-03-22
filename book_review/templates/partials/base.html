@@ -1,0 +1,40 @@
+{% load static %}
+
+<title>{% block title %} Recipe {% endblock title %}</title>
+
+{% block header %}
+
+<header>
+
+<nav>
+    <ul>
+        <li><a href="{% url 'book_review:home' %}">Home</a></li>
+        <li><a href="{% url 'book_review:book_list' %}">All Books</a></li>
+    </ul>
+</nav>
+
+</header>
+
+{% endblock header %}
+
+{% block content %}
+
+{% endblock content %}
+
+{% block footer %}
+
+ <footer>
+        <div class="footer-content">
+            Django Assignment 2025
+        </div>
+</footer>
+
+{% endblock footer %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!-- Add this to your base.html head section -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+{% endblock links %}

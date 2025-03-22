@@ -1,0 +1,22 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+<div class="page-background">
+    <div class="home-container">
+        <div class="welcome-header">
+            <h4>Welcome to our Homepage</h4>
+        </div>
+
+        <div class="link-container">
+            <p>Check out all the books <a href="{% url 'book_review:book_list' %}">here</a></p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}

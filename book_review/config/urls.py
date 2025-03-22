@@ -22,12 +22,11 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('library/', include("library.urls")),
-    path('authors/', include("authors.urls")),
-    path('dtl', include("dtl.urls")),
+    path('', include("book_review.urls"))
 ]
+
 
 if settings.DEBUG:
     urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+        settings.MEDIA_URL, document_root = settings.MEDIA_ROOT
     )

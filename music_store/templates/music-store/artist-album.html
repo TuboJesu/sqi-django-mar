@@ -1,0 +1,37 @@
+{% extends "partials/base.html" %}
+
+{% load static %}
+
+{% block title %}All {{ artist.name }} Albums{% endblock title %}
+
+{% block contents %}
+<div class="artist-albums-container">
+    <h3>All Albums by {{ artist.name }}</h3>
+    
+    <ul class="album-list">
+        {% for album in artist.Albums.all %}
+            <li class="album-item">
+                <div class="album-info">
+                    <strong>{{ album.title }}</strong>
+                    <span class="release-date">Released on: {{ album.release_date }}</span>
+                    <span class="artist-name">by {{ album.artist.name }}</span>
+                      {% if album.album_image %}
+                    <img src="{{ album.album_image.url }}" alt="{{ album.title }} Image">
+                
+                {% else %}
+                    <p> No picture yet</p>
+                {% endif %}
+                </div>
+            </li>
+        {% empty %}
+            <li>No albums found for this artist.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock contents %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}
+
+ 

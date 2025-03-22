@@ -12,3 +12,5 @@ def cart(request):
     }
 
     return render(request, "dtl/cart.html", context)
+
+

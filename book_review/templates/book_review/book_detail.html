@@ -1,0 +1,57 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %} Book Details {% endblock title %}
+
+{% block content %}
+    <div class="book-details-container">
+        <div class="details-header">
+            <h4>Check out details on this book</h4>
+        </div>
+        
+        <div class="book-info">
+            <div class="book-title">{{ book.title }}</div>
+            <div class="book-author">{{ book.author }}</div>
+            <div class="book-date">{{ book.publication_date }}</div>
+        </div>
+
+        <div class="reviews-section">
+            <h5 class="reviews-title">Reviews</h5>
+            
+            {% if book.review.all %}
+                {% for review in book.review.all %}
+                    <div class="review-card">
+                        <p class="reviewer-name">{{ review.reviewer_name }}</p>
+                        <div class="review-rating">
+                            <span class="rating-stars">
+                                {% for i in "12345" %}
+                                    {% if forloop.counter <= review.rating %}
+                                        ★
+                                    {% else %}
+                                        ☆
+                                    {% endif %}
+                                {% endfor %}
+                            </span>
+                            <span class="rating-value">{{ review.rating }}/5</span>
+                        </div>
+                        <p class="review-comment">{{ review.comment }}</p>
+                        <p class="review-date">{{ review.created_at }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="no-reviews">
+                    <p>No reviews yet. Be the first to review this book!</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="review-form-section">
+            <h5 class="review-form-title">Add Your Review</h5>
+            {% include "book_review/review_creation.html" %}
+        </div>
+    </div>
+{% endblock content %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}

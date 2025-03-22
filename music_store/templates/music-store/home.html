@@ -1,0 +1,22 @@
+{% extends "partials/base.html" %}
+
+{% load static %}
+
+{% block title %}Homepage{% endblock title %}
+
+{% block contents %}
+<div class="homepage-container">
+    <h1>Welcome to Music Store</h1>
+    <p>Explore amazing artists and their albums.</p>
+    
+    <div class="homepage-links">
+        <a href="{% url 'music_store:artists' %}" class="btn">View All Artists</a>
+        <a href="{% url 'music_store:all-albums' %}" class="btn">View All Albums</a>
+    </div>
+</div>
+{% endblock contents %}
+
+{% block links %}
+<link rel="stylesheet" href=" {% static 'css/style.css' %}">
+{% endblock links %}
+

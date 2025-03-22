@@ -1,0 +1,35 @@
+{% extends "partials/base.html" %}
+
+{% load static %}
+
+{% block title %}All Artists{% endblock title %}
+
+{% block contents %}
+<div class="artist-container">
+    <h1>Discover this Artist and Their Journey</h1>
+
+    <div class="artist-card">
+        <h2 class="artist-name">{{ artist.name }}</h2>
+        <span class="debut-year">Debuted in {{ artist.debut_year }}</span>
+
+        {% if artist.artist_image %}
+            <img src="{{ artist.artist_image.url }}" alt="{{ artist.name }} Image" class="artist-image">
+        {% else %}
+            <p class="no-image-text">No picture yet</p>
+        {% endif %}
+    </div>
+
+    <p class="album-link">
+        <a href="{% url 'music_store:author-albums' artist.pk %}" class="album-btn">View Their Albums Here</a>
+    </p>
+</div>
+{% endblock contents %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}
+
+
+
+
+
