@@ -1,0 +1,79 @@
+{% load static %}
+
+<html>
+<head>
+    <title>{% block title %}{% endblock title %}</title>
+    
+    {% block links %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="{% static 'js/base.js' %}"></script>
+    {% endblock links %}
+
+
+    <style>
+    .success {
+        color:green;
+    }
+
+    .error {
+        color:red;
+    }
+
+    .info {
+        color:black;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div id="page-wrapper" class="page-container">
+        {% block header %}
+        <header id="main-header" class="site-header">
+            <nav id="main-navigation" class="primary-nav">
+                <a href="{% url 'movie_collection_app:all_movies' %}" id="home-link" class="nav-link">Go Back Home</a>
+                    <div class="user-auth">
+                        {% if request.user.is_authenticated %}
+                            <span class="welcome-text">Welcome, {{ request.user }}</span>
+                            <form action="{% url 'user:logout' %}" method="POST" class="logout-form">
+                                {% csrf_token %}
+                                <button type="submit" class="auth-button logout-button">Logout</button>
+                            </form>
+                        {% else %}
+                            <a href="{% url 'user:login' %}" class="auth-button login-button">Login</a>
+                        {% endif %}
+                    </div>
+            </nav>
+        </header>
+
+        {% if messages %}
+            <div id="message-container">
+                <ul>
+                    {% for message in messages %}
+                        <li class='{{ message.tags }}'>
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {% endblock header %}
+
+        <main id="main-content" class="content-wrapper">
+            {% block content %}
+
+            {% endblock content %}
+        </main>
+
+        {% block footer %}
+        <footer id="main-footer" class="site-footer">
+            <div id="footer-content" class="footer-text">
+                Django Assignment 2025
+            </div>
+        </footer>
+        {% endblock footer %}
+    </div>
+
+</body>
+</html>

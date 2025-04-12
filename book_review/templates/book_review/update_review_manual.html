@@ -1,0 +1,45 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %} Update the review {% endblock title %}
+
+{% block content %}
+    <div class="review-form-section">
+  <h4>Update the review for {{ book.title }}</h4>
+  <form action="{% url 'book_review:update_review_manual' review.pk %}" method="POST">
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+      <div class="errorlist">
+        {% for error in form.non_field_errors %}
+          <p>{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div>
+      {% for error in form.rating.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
+      <label for="rating">Rating:</label>
+      <input type="number" name="rating" min='1' max='5' value="{{ form.rating.value|default_if_none:'' }}" required>
+    </div>
+
+    <div>
+      {% for error in form.comment.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
+      <label for="comment">Comment:</label>
+      <textarea name="comment" required>{{ form.comment.value|default_if_none:'' }}</textarea>
+    </div>
+
+    <button type="submit">Send Review</button>
+  </form>
+</div>
+
+{% endblock content %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}
+

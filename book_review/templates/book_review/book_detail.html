@@ -37,6 +37,8 @@
                         <p class="review-comment">{{ review.comment }}</p>
                         <p class="review-date">{{ review.created_at }}</p>
                     </div>
+                    <a href="{% url 'book_review:update_review_manual' review.pk %}">Edit the review</a>
+                    <a href="{% url 'book_review:confirm_delete' review.pk %}">Delete the review</a>
                 {% endfor %}
             {% else %}
                 <div class="no-reviews">
@@ -47,8 +49,48 @@
 
         <div class="review-form-section">
             <h5 class="review-form-title">Add Your Review</h5>
-            {% include "book_review/review_creation.html" %}
         </div>
+    </div>
+
+            <div class="review-form-section">
+        <h4>Drop a review for {{ book.title }}</h4>
+        <form action="{% url 'book_review:create_review' book.pk %}" method="POST">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+            <div class="errorlist">
+                {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div>
+            {% for error in form.reviewer_name.errors %}
+                <div class="errorlist">{{ error }}</div>
+            {% endfor %}
+            <label for="reviewer_name">Enter your name:</label>
+            <input type="text" name="reviewer_name" value="{{ form.reviewer_name.value|default_if_none:'' }}" required>
+            </div>
+
+            <div>
+            {% for error in form.rating.errors %}
+                <div class="errorlist">{{ error }}</div>
+            {% endfor %}
+            <label for="rating">Rating:</label>
+            <input type="number" name="rating" min='1' max='5' value="{{ form.rating.value|default_if_none:'' }}" required>
+            </div>
+
+            <div>
+            {% for error in form.comment.errors %}
+                <div class="errorlist">{{ error }}</div>
+            {% endfor %}
+            <label for="comment">Comment:</label>
+            <textarea name="comment" required>{{ form.comment.value|default_if_none:'' }}</textarea>
+            </div>
+
+            <button type="submit">Send Review</button>
+        </form>
     </div>
 {% endblock content %}
 

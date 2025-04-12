@@ -1,0 +1,96 @@
+{% extends "partials/base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Movie Update
+{% endblock title %}
+
+{% block content %}
+    <div>
+        <div>
+            Update Movie by {{ movie.added_by }}
+        </div>
+        <form action="{% url 'movie_collection_app:update_movie' movie.pk %}" method='POST', enctype = 'multipart/form-data' class='update-form'>
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+
+                    {% for errors in form.non_field_errors %}
+                    <p>{{ errors }}</p>
+                    {% endfor %}
+                
+                {% endif %}
+
+            <div>
+                <label for="title">Enter the Title: </label>
+                <input type="text" name='title' value='{{ form.title.value| default_if_none:"" }}' required>
+
+                {% for errors in form.title.errors %}
+                <p>{{ errors }}</p>
+                {% endfor %}
+            </div>
+            
+            <div>
+                <label for="director">Enter the Director Name: </label>
+                <input type="text" name='director' value='{{ form.director.value| default_if_none:"" }}' required>
+                {% for errors in form.director.errors %}
+                <p>{{ errors }}</p>
+                {% endfor %}
+            </div>
+            
+            <div>
+                <label for="release_date">Select Movie Release Date: </label>
+                <input type="date" name='release_date' value="{{ form.release_date.value|default_if_none:''|date:'Y-m-d' }}">
+                
+                {% for errors in form.release_date.errors %}
+                <p>{{ errors }}</p>
+                {% endfor %}
+            </div>
+
+            <div>
+                <label for="description">Description: </label>
+                <textarea name="description" required> {{ form.description.value| default_if_none:"" }} </textarea>
+            
+                {% for errors in form.description.errors %}
+                <p>{{ errors }}</p>
+                {% endfor %}
+            </div>
+            
+            <div>
+                <label for="poster">Movie Poster: </label>
+                <input type="file" name="poster">
+
+                {% for errors in form.poster.errors %}
+                <p>{{ errors }}</p>
+                {% endfor %}
+            </div>
+
+        <div>
+                <label for="id_genre">Genre: </label>
+                <select name="genre" id="id_genre" required>
+                    {% for value, label in form.fields.genre.choices %}
+                        <option value="{{ value }}" {% if form.genre.value == value %}selected{% endif %}>
+                            {{ label }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+                {% for error in form.genre.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class='update-button'>Update Movie</button>
+
+
+        </form>
+    </div>
+{% endblock content %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<script src="{% static 'js/base.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+{% endblock links %}

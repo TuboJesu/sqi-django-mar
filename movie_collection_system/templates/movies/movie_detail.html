@@ -1,0 +1,48 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %}
+{{ movie.title }} Full Details
+{% endblock title %}
+
+{% block content %}
+<div class="movie-detail-container">
+    <div class="movie-card">
+        
+        <!-- Poster -->
+        <div class="movie-poster-wrapper">
+            <img src="{{ movie.poster.url }}" alt="{{ movie.title }} Poster" class="movie-poster">
+        </div>
+
+        <!-- Movie Info -->
+        <div class="movie-info">
+            <h1 class="movie-title">{{ movie.title }}</h1>
+            <p class="movie-meta"><strong>Genre:</strong> {{ movie.get_genre_display }}</p>
+            <p class="movie-meta"><strong>Directed by:</strong> {{ movie.director }}</p>
+            <p class="movie-meta"><strong>Release Date:</strong> {{ movie.release_date }}</p>
+            <p class="movie-meta"><strong>Added By:</strong> {{ movie.added_by }}</p>
+
+            <hr class="divider">
+
+            <div class="movie-description">
+                {{ movie.description }}
+            </div>
+
+            <div class="movie-actions">
+                {% if request.user == movie.added_by %}
+                    <a href="{% url 'movie_collection_app:update_movie' movie.pk %}" class="btn btn-update">✏️ Update</a>
+                    <a href="{% url 'movie_collection_app:confirm_delete' movie.pk %}" class="btn btn-delete">🗑️ Delete</a>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+<script src="{% static 'js/detail.js' %}"></script>
+{% endblock links %}

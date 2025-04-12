@@ -1,0 +1,90 @@
+/* Centering the login form */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: linear-gradient(90deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end)); /* Soft blue-gray for a more modern look */
+}
+
+/* Form wrapper */
+.login-form {
+    background: rgba(30, 42, 120, 0.5);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Input fields */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #94a3b8; /* Softer gray-blue border */
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f1f5f9; /* Light blue-gray for a subtle difference */
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #6366f1; /* Indigo for a modern, professional focus effect */
+    background: #ffffff;
+    outline: none;
+    box-shadow: 0 0 6px rgba(99, 102, 241, 0.3);
+}
+
+/* Button */
+.signup-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4d13e0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: #eab308;
+}
+
+/* Error messages */
+.error-container {
+    background: #fde68a; /* Softer warning yellow instead of harsh red */
+    padding: 10px;
+    border-radius: 5px;
+    color: #b45309; /* Warm brown for better readability */
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    color: #b45309;
+    font-size: 0.9rem;
+}
+
+/* Sign-up link */
+.login-link {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: #4f46e5; /* Deeper indigo for a richer contrast */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

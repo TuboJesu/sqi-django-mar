@@ -1,0 +1,74 @@
+:root {
+    --gradient-start: #3494e6;
+    --gradient-middle: #6d43d8;
+    --gradient-end: #30d158;
+    --dark-blue: #1e2a78;
+    --deep-purple: #4a266a;
+    --bright-accent: #ff3b30;
+    --soft-text: #e5e5e5;
+}
+
+.delete-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-middle));
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.delete-confirmation {
+    text-align: center;
+    color: var(--soft-text);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.delete-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.delete-button {
+    background-color: var(--bright-accent);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.delete-button:hover {
+    background-color: #ff5b4d;
+    transform: scale(1.05);
+}
+
+.cancel-button {
+    background-color: transparent;
+    color: var(--soft-text);
+    border: 2px solid var(--soft-text);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s;
+    text-decoration: none;
+}
+
+.cancel-button:hover {
+    background-color: rgba(229, 229, 229, 0.2);
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

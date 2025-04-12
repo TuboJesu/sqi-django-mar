@@ -1,0 +1,83 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %}
+    Movie Creation
+{% endblock title %}
+
+{% block content %}
+<div class="create-page-container">
+  <form class="movie-form" action="{% url 'movie_collection_app:create_movie' %}" method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        <h2 class="form-title">🎬 Create a New Movie</h2>
+
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" value="{{ form.title.value|default_if_none:'' }}" required>
+            {% for error in form.title.errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="director">Director</label>
+            <input type="text" name="director" value="{{ form.director.value|default_if_none:'' }}" required>
+            {% for error in form.director.errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="release_date">Release Date</label>
+            <input type="date" name="release_date" value="{{ form.release_date.value|default_if_none:'' }}" required>
+            {% for error in form.release_date.errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" rows="5" required>{{ form.description.value|default_if_none:'' }}</textarea>
+            {% for error in form.description.errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="poster">Poster</label>
+            <input type="file" name="poster">
+            {% for error in form.poster.errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="id_genre">Genre</label>
+            <select name="genre" id="id_genre" required>
+                {% for value, label in form.fields.genre.choices %}
+                    <option value="{{ value }}" {% if form.genre.value == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+            {% for error in form.genre.errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <button type="submit" class="submit-btn">🚀 Create Movie</button>
+  </form>
+</div>
+
+{% endblock content %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/create.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<script src="{% static 'js/base.js' %}"></script>
+{% endblock links %}

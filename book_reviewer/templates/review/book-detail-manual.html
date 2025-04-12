@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.title }}</title>
+</head>
+<body>
+    <div>
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.author }}</p>
+        <p>Published on: {{ book.publication_date }}</p>
+    </div>
+
+    <div>
+        <h3>Reviews for {{ book.title }}</h3>
+        <div>
+            {% for review in reviews %}
+                <p>{{ review.comment }}</p>
+                <p>{{ review.reviewer_name }}</p>
+                <p>{{ review.rating }}/5</p>
+                <p>{{ review.created_at }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div>
+        <form action="{% url 'review:book_detail_manual' book.pk %}" method="POST">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+            <div>
+                {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}            
+            </div>
+            {% endif %}
+            <div>
+                {% if form.reviewer_name.errors %}
+                <div>
+                    {% for error in form.reviewer_name.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}            
+                </div>
+                {% endif %}
+                <label for="reviewer_name">Reviewer Name:</label>
+                <input type="text" name="reviewer_name" value="{{ form.reviewer_name.value|default_if_none:'' }}">
+            </div>
+
+            <div>
+                {% if form.rating.errors %}
+                <div>
+                    {% for error in form.rating.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}            
+                </div>
+                {% endif %}
+                <label for="rating">Rating:</label>
+                <input type="number" name="rating" min="1" max="5" value="{{ form.rating.value|default_if_none:'' }}">
+            </div>
+
+            <div>
+                {% if form.comment.errors %}
+                <div>
+                    {% for error in form.comment.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}            
+                </div>
+                {% endif %}
+                <label for="comment">Comment:</label>
+                <textarea name="comment">{{ form.comment.value|default_if_none:'' }}</textarea>
+            </div>
+
+            <button type="submit">Drop Review</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
